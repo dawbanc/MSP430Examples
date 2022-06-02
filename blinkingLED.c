@@ -21,6 +21,8 @@ int delay(void);		// delays the microcontroller for 10 ms.
 // should start running this program.
 int main(void)
 {
+	WDTCLT = WDTPW | WDTHOLD;	// stop watchdog time
+
 `	// DEFINES USAGE:
 	//
 	// 	P1DIR is a define from the MSP430.h file. This stands for
@@ -77,6 +79,14 @@ int main(void)
 	//	11111110. Then we and this value with the register, the only 
 	P1DIR |= BIT0;		// sets P1.0 to output
 	P1OUT &=~BIT0;		// sets P1.0 to logic low
+	
+	// This is the power mode register. Clearing the Low Power Mode 5 bit or LOCKLPM5
+	// allows the MSP430 to supply the pins and ports with power. Do keep in mind these
+	// pins are limited to around 4.5mA at 3.3V. This is essential to do anything
+	// with the MSP430 that is really useful (not to say there is nothing you can do
+	// but any interactions is impossible to do). IF THIS IS MISSING YOUR CODE WILL
+	// MOST LIKELY DON'T WORK!
+	PM5CTL0 &= ~LOCKLPM5;
 
 	// The while statement will allow us to loop forever.
 	// It will continuously check after every iteration to
