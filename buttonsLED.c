@@ -19,8 +19,12 @@ int main(void)
 	P2OUT &=~BIT3;				// sets P2.3 resistor to pull-up
 
 	PM5CTL0 &= ~LOCKLPM5;			// turn on GPIO
-						
 	
+	// Interrupts are used to take control of code temporarily before returning
+	// to the rest of the program. This is an altera
+	P4IE |= BIT1;				// enable interrupt on pin 4.1
+	P2IE |= BIT3;				// enable interrupt on pin 2.3
+	__enable_interrupt();			// enable interrupts to take place	
 
 	return 0;	
 }
