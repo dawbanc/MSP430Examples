@@ -28,18 +28,22 @@ This introduces a new port register that will be used: `PxIN`.
 
 ### 3.) buttonsLED.c (unverified)
 This is the exact same as Example 2 : buttonsLEDPolling.c except the method on how it is triggered changed. Now the use of interrupts and globals.
+
+Globals are variables that can be accessed anywhere. Usually we would use a pointer (which will be explained later, more info can be found on [Wikipedia](https://en.wikipedia.org/wiki/Pointer_(computer_programming))) but for now globals will serve the same purpose and be easier to learn and visualize.
+
+Interrupts are used commonly in embedded projects to avoid polling, and allows that microcontroller to work on other tasks while waiting for another process to be triggered to begin. Embedds wrote a really good article to Introduce MSP430 Interrupts here: [Embedds](https://embedds.com/introduction-to-msp430-interrupts/). The interrupt service routines (ISRs) are unlike regular C functions, where we don't need to define the prototype before our main function. 
 - [x] Started
 - [x] Coded
 - [ ] Verified
 
 ### 4.) timersLED.c (not started)
-Very similar to buttonsLED.c. However, instead of using __delay_cycles, timers will be setup and used. This is to serve as an introduction on how to use timers.
+Very similar to Example01 blinkingLED.c. However, instead of using __delay_cycles, timers will be setup and used. This is to serve as an introduction on how to setup and use timers. Several timer configuration registers such as *TODO: Add Config Register Examples* will be used.
 - [ ] Started
 - [ ] Coded
 - [ ] Verified
 
 ### 5.) moreTimers.c (not started)
-This program goes a bit more in depth into timers and how to use them to their full potential.
+This program goes a bit more in depth into timers and how to use them to their full potential. This is quite similar to the Example03buttonsLED.c. Now, our program will act as a Pulse-Width Modulation signal. This means our LED on and off times will no longer be the exact same. The duty cycle is the percentage of ON time over the whole period. This is what we will be changing with the buttons and will make our darker or brighter.
 - [ ] Started
 - [ ] Coded
 - [ ] Verified
