@@ -30,12 +30,12 @@ int main(void)
 	// Button S1 (LEFT)
 	P4DIR &=~BIT1;				// sets P4.1 to input
 	P4REN |= BIT1;				// sets P4.1 resistor to enabled
-	P4OUT &=~BIT1;				// sets P4.1 resistor to pull-up
+	P4OUT |= BIT1;				// sets P4.1 resistor to pull-up
 
 	// Button S2 (RIGHT)
 	P2DIR &=~BIT3;				// sets P2.3 to input
 	P2REN |= BIT3;				// sets P2.3 resistor to enabled
-	P2OUT &=~BIT3;				// sets P2.3 resistor to pull-up
+	P2OUT |= BIT3;				// sets P2.3 resistor to pull-up
 
 	PM5CTL0 &= ~LOCKLPM5;			// turn on GPIO
 	
