@@ -13,10 +13,10 @@ Very similar to the first bit of code as in we are flashing LEDs however, with t
 - [x] Coded
 - [ ] Verified
 
-## 3.) buttonsLED.c (incomplete)
+## 3.) buttonsLED.c (unverified)
 This is the exact same as Example 2 : buttonsLEDPolling.c except the method on how it is triggered changed. Now the use of interrupts and globals.
 - [x] Started
-- [ ] Coded
+- [x] Coded
 - [ ] Verified
 
 ## 4.) timersLED.c (not started)
