@@ -1,8 +1,12 @@
 # MSP430Examples Repository
-Examples of code to run on MSP430FR2355 LaunchPad boards. These boards can be purchased directly from [Texas Instruments](https://www.ti.com/tool/MSP-EXP430FR2355) (but can also be found at other retailers such as Digikey, Mouser, etc.). Below each example description is the status of that example. As these are added and tested they will be updated. 
+Examples of code to run on MSP430 LaunchPad boards. These boards can be purchased directly from [Texas Instruments](https://www.ti.com/tool/MSP-EXP430FR2355) (but can also be found at other retailers such as Digikey, Mouser, etc.). Below each example description is the status of that example. As these are added and tested they will be updated. 
 
 ## Usage
 This repository is to serve as a manual on how to do things on an MSP430FR2355. This includes everything from how to control pins to how modules work. It is designed to teach ANYONE on how to use these microcontrollers, but are good to review (at least for me when I forget on how to do something very specific with communication modules). While more and more examples may be added in the future, each one should have a thorough explanation on what that example teaches both on this page and within the comments of the code. If you are new to this type of thing, it might be a good idea to read through the code, take notes on some of the major things and try to code it yourself.
+
+## Current Devices
+- MSP430FR2355 LaunchPad Development Board
+- Coming soon: MSP430FR5994 LaunchPad Development Board
 
 ## Example Descriptions
 ### 1.) blinkingLED.c (unverified)
@@ -16,7 +20,7 @@ Make sure that the watchdog timer is stopped using `WDTCLT = WDTPW | WDTHOLD;` a
 
 - [x] Started
 - [x] Coded
-- [ ] Verified
+- [x] Verified
 
 ### 2.) buttonsLEDPolling.c (unverified)
 Very similar to the first bit of code as in we are flashing LEDs however, with this example we are changing the frequency at which they flash by using the two buttons. This method uses polling. More on polling can be found on [Wikipedia](https://en.wikipedia.org/wiki/Polling_(computer_science)).

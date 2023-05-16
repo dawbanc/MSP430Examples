@@ -100,6 +100,7 @@ int main(void)
 		// use this operator. In most cases a set and a reset is best practice,
 		// however, since this is just a simple LED flashing an XOR is perfect.
 		P1OUT ^= BIT0;
+		delay();
 	}
 
 	// At the end of the program, we return a zero. This
