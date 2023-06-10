@@ -42,7 +42,7 @@ int main(void)
 
 	PM5CTL0 &= ~LOCKLPM5;			// turn on GPIO
 	
-	unsigned long hz_cur = 500000; 		// define our frequency that we
+	unsigned long hz_cur = 50000; 		// define our frequency that we
 						// wait to change the LEDs status
 
 	// Main loop

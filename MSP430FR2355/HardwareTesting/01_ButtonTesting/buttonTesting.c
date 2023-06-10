@@ -11,6 +11,10 @@ int main(void){
 	P1DIR |= BIT0;				// sets P1.0 to output
 	P1OUT &=~BIT0;				// sets P1.0 to logic low
 
+	// LED2 Setup
+	P6DIR |= BIT6;				// sets P6.6 to output
+	P6OUT &=~BIT6;				// sets P6.6 to logic low
+
 	// Button S1 (LEFT)
 	P4DIR &=~BIT1;				// sets P4.1 to input
 	P4REN |= BIT1;				// sets P4.1 resistor to enabled
@@ -24,18 +28,22 @@ int main(void){
 	PM5CTL0 &= ~LOCKLPM5;			// turn on GPIO
 	
 	while(1){
-		if(P4IN & BIT1){
-			// turn on LED1
-		} else {
+		if(P4IN & BIT1){ // if button 1 is not pressed
 			// turn off LED1
+			P1OUT &=~BIT0;
+		} else {
+			// turn on LED1
+			P1OUT |= BIT0;
 		}
 
 		// See if S2 has been pressed
-		if(P2IN & BIT3)
+		if(P2IN & BIT3) // if button 2 has not been pressed
 		{
-			// turn on LED2	
+			// turn off LED2	
+			P6OUT &=~BIT6;
 		} else {
-			// turn off LED2
+			// turn on LED2
+			P6OUT |= BIT6;
 		}
 	}
 

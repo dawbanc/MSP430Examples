@@ -28,7 +28,7 @@ Very similar to the first bit of code as in we are flashing LEDs however, with t
 This introduces a new port register that will be used: `PxIN`.
 - [x] Started
 - [x] Coded
-- [ ] Verified
+- [x] Verified
 
 ### 3.) buttonsLED.c (unverified)
 This is the exact same as Example 2 : buttonsLEDPolling.c except the method on how it is triggered changed. Now the use of interrupts and globals.
