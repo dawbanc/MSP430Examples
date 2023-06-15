@@ -5,7 +5,7 @@ Examples of code to run on MSP430FR2355 LaunchPad boards. These boards can be pu
 This repository is to serve as a manual on how to do things on an MSP430FR2355. This includes everything from how to control pins to how modules work. It is designed to teach ANYONE on how to use these microcontrollers, but are good to review (at least for me when I forget on how to do something very specific with communication modules). While more and more examples may be added in the future, each one should have a thorough explanation on what that example teaches both on this page and within the comments of the code. If you are new to this type of thing, it might be a good idea to read through the code, take notes on some of the major things and try to code it yourself.
 
 ## Example Descriptions
-### 1.) blinkingLED.c (unverified)
+### 1.) blinkingLED.c
 This code is created to be used on a LaunchPad board but can be easily modified to work on other hardware. This is a simple start to micro-contoller programming. It will flash LED1 at a rate of 2Hz (or half a second intervals). 
 
 This content can be very dry, especially in the first little bit of learning. However, the knowledge in this first example is crucial for everything in the future. This example shows some bitwise operations that are commonly used on the MSP430 along with the general outline on how C code works on the MSP430 microcontroller. 
