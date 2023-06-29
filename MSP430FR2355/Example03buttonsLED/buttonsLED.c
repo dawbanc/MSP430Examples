@@ -13,7 +13,7 @@ unsigned long hz_cur = 500000;			// define our frequency that we wait to
 
 int main(void)
 {
-	WDTCLT = WDTPW | WDTHOLD;		// stop watchdog timer
+	WDTCTL = WDTPW | WDTHOLD;		// stop watchdog timer
 
 	// LED1 Setup
 	P1DIR |= BIT0;				// sets P1.0 to output

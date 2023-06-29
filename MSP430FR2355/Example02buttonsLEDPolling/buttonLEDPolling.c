@@ -9,9 +9,12 @@
 #define HZ_LO 5000
 #define HZ_INT 5000
 
+// Function Prototypes
+void delay(int n);
+
 int main(void)
 {
-	WDTCLT = WDTPW | WDTHOLD;		// stop watchdog timer
+	WDTCTL = WDTPW | WDTHOLD;		// stop watchdog timer
 
 	// LED1 Setup
 	P1DIR |= BIT0;				// sets P1.0 to output
@@ -39,7 +42,7 @@ int main(void)
 
 	PM5CTL0 &= ~LOCKLPM5;			// turn on GPIO
 	
-	unsigned long hz_cur = 500000; 		// define our frequency that we
+	unsigned long hz_cur = 50000; 		// define our frequency that we
 						// wait to change the LEDs status
 
 	// Main loop
@@ -75,10 +78,14 @@ int main(void)
 			
 		}
 		P1OUT |= BIT0;			// Turn on LED1
-		__delay_cycles(hz_cur/2);	// delay for half of our frequency
+		delay(hz_cur/2);		// delay for half of our frequency
 		P1OUT &=~BIT0;			// Turn off LED1
-		__delay_cycles(hz_cur/2);	// delay for the other half of our frequency
+		delay(hz_cur/2);		// delay for the other half of our frequency
 	}
 
 	return 0;	
+}
+
+void delay(int n){
+	for(int i=0; i<n; i++){}; // delay
 }

@@ -7,7 +7,7 @@
 // the compiler uses during the compiling process to make our
 // code that much more readable. We will talk more about these
 // down below.
-#include <MSP430.h>
+#include <msp430.h>
 
 // This is a function prototype. It just defines any functions
 // other than main here. This allows us to use them anywhere in
@@ -21,9 +21,9 @@ int delay(void);		// delays the microcontroller for 10 ms.
 // should start running this program.
 int main(void)
 {
-	WDTCLT = WDTPW | WDTHOLD;	// stop watchdog time
+	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog time
 
-`	// DEFINES USAGE:
+	// DEFINES USAGE:
 	//
 	// 	P1DIR is a define from the MSP430.h file. This stands for
 	// 	Port #1, direction and decides if the port is an input
@@ -100,6 +100,7 @@ int main(void)
 		// use this operator. In most cases a set and a reset is best practice,
 		// however, since this is just a simple LED flashing an XOR is perfect.
 		P1OUT ^= BIT0;
+		delay();
 	}
 
 	// At the end of the program, we return a zero. This
